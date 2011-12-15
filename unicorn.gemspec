@@ -1,6 +1,6 @@
 # -*- encoding: binary -*-
-ENV["VERSION"] or abort "VERSION= must be specified"
-manifest = File.readlines('.manifest').map! { |x| x.chomp! }
+ENV["VERSION"] ||= "4.2" or abort "VERSION= must be specified"
+manifest = File.readlines('manifest').map! { |x| x.chomp! }
 require 'wrongdoc'
 extend Wrongdoc::Gemspec
 name, summary, title = readme_metadata
